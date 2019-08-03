@@ -8,7 +8,11 @@ module.exports = (app) => {
         })
     );
     
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get('/auth/google/callback', passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/todo');
+        }
+    );
 
     app.get('/api/logout', (req, res) => {
         req.logout(); // function in passport. kills the id in the cookie

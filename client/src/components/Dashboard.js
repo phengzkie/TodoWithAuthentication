@@ -33,7 +33,7 @@ class App extends Component {
       items: updatedItems,
       item: '',
       id: uuid(),
-      editItems: false
+      editItem: false
     });
   };
 
